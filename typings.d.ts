@@ -11,6 +11,7 @@ interface EventSourceConstructor {
 interface EventSource extends EventTarget {
   url: string;
   readyState: ReadyState;
+  listeners: Array<Function>;
   onopen: Function;
   onmessage: (event: OnMessageEvent) => void;
   onerror: Function;
