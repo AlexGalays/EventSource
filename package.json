@@ -1,23 +1,28 @@
 {
-  "name": "event-source",
-  "version": "1.0.0",
+  "name": "ng-event-source",
+  "version": "1.0.9",
   "main": "eventsource.js",
   "typings": "typings.d.ts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Yaffle/EventSource.git"
+    "url": "git://github.com/sguiheux/EventSource.git"
   },
   "keywords": [
     "sse",
     "server sent events",
     "eventsource",
     "event-source",
-    "polyfill"
+    "polyfill",
+    "angular",
+    "angular2",
+    "angular 2",
+    "angular 4",
+    "webpack"
   ],
-  "author": "Yaffle (https://github.com/Yaffle)",
+  "author": "Steven Guiheux (https://github.com/sguiheux)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Yaffle/EventSource/issues"
+    "url": "https://github.com/sguiheux/EventSource/issues"
   },
-  "homepage": "https://github.com/Yaffle/EventSource"
+  "homepage": "https://github.com/sguiheux/EventSource"
 }

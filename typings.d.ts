@@ -1,31 +1,29 @@
-
 declare enum ReadyState {CONNECTING = 0, OPEN = 1, CLOSED = 2}
 
-interface EventSourceConstructor {
-  new(url: string, eventSourceInitDict?: EventSourceInit): EventSource;
-  CONNECTING: ReadyState;
-  OPEN: ReadyState;
-  CLOSED: ReadyState;
-}
+export class EventSourcePolyfill extends EventTarget {
+    CONNECTING: ReadyState;
+    OPEN: ReadyState;
+    CLOSED: ReadyState;
 
-interface EventSource extends EventTarget {
-  url: string;
-  readyState: ReadyState;
-  onopen: Function;
-  onmessage: (event: OnMessageEvent) => void;
-  onerror: Function;
-  close: () => void;
+    constructor(url: string, eventSourceInitDict?: EventSourceInit);
+
+    url: string;
+    readyState: ReadyState;
+    onopen: Function;
+    onmessage: (event: OnMessageEvent) => void;
+    onerror: Function;
+    close: () => void;
 }
 
 interface EventSourceInit {
-  withCredentials?: boolean;
-  headers?: Object;
+    withCredentials?: boolean;
+    headers?: Object;
+    errorOnTimeout?: boolean;
+    heartbeatTimeout?: number;
+    checkActivity?: boolean;
+    connectionTimeout?: number;
 }
 
 interface OnMessageEvent {
-  data: string;
+    data: string;
 }
-
-declare var EventSource: EventSourceConstructor;
-
-export default EventSource;
