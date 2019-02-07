@@ -152,7 +152,7 @@ var EventSourcePolyfill = (function (global) {
 
         var withCredentials = isCORSSupported && options != undefined && Boolean(options.withCredentials);
         var initialRetry = getDuration(1000, 0);
-        var heartbeatTimeout = getDuration(options.heartbeatTimeout || 45000, 0);
+        var heartbeatTimeout = getDuration(options && options.heartbeatTimeout || 45000, 0);
         var checkActivity = true;
         if (options && options.checkActivity != null) {
             checkActivity = Boolean(options.checkActivity);
